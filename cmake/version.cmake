@@ -34,15 +34,15 @@ function( git_get_latest_tag INOUT_GIT_TAG INOUT_GIT_BRANCH INOUT_GIT_REV INOUT_
     endif()
 
     # Then get the corresponding tag
-    execute_process(
-        COMMAND           git describe --tags --abbrev=0 ${GIT_TAG_REV}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
-        RESULT_VARIABLE   GIT_RESULT
-        OUTPUT_VARIABLE   GIT_TAG )
-    if( NOT "${GIT_RESULT}" STREQUAL "0")
-        message( ERROR " \"git describe --tags --abbrev=0\" -> ${GIT_RESULT}" )
-    endif()
-    string( STRIP "${GIT_TAG}" GIT_TAG )
+    #execute_process(
+    #    COMMAND           git describe --tags --abbrev=0 ${GIT_TAG_REV}
+    #    WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+    #    RESULT_VARIABLE   GIT_RESULT
+    #    OUTPUT_VARIABLE   GIT_TAG )
+    #if( NOT "${GIT_RESULT}" STREQUAL "0")
+    #    message( ERROR " \"git describe --tags --abbrev=0\" -> ${GIT_RESULT}" )
+    #endif()
+    #string( STRIP "${GIT_TAG}" GIT_TAG )
 
     #----- Get the branch description
     execute_process(
